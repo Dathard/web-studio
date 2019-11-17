@@ -24,5 +24,20 @@ class Customer
 		return $customersList;
 	}
 	
+	public static function getCustomerData($idCustomer)
+	{
+		$db = Db::getConnection();
+
+		$sql = "SELECT * FROM customers WHERE id_customer = $idCustomer";
+		$result = $db->query($sql);
+
+		$row = $result->fetch_assoc();
+
+		return array(
+			'full-name'	=>	$row['last_name'].' '.$row['name'].' '.$row['surname'],
+			'phone'		=>	$row['phone'],
+			'email'		=>	$row['email']
+		);
+	}
 	
 }

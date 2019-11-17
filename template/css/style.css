@@ -536,3 +536,33 @@ h2.page_header{
 #customers .operations a{
     font-size: 25px;
 }
+
+
+
+
+.customer_card_wrapper{
+    display: inherit;
+}
+.customer_card_wrapper #customer_card{
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    background: #fff;
+    width: 610px;
+    max-width: 610px;
+    min-width: 610px;
+}
+.customer_card_wrapper #projects{
+    width: 610px;
+    max-width: 610px;
+    min-width: 610px;
+}
+#customer_card .page_header{
+    padding-bottom: 5px;
+}
+#customer_card p{
+    padding: 5px 25px;
+    margin: 0;
+}
+#customer_card p span{
+    font-style: italic;
+}

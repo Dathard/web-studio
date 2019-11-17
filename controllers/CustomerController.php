@@ -16,4 +16,17 @@ class CustomerController
 		return true;
 	}
 
+	public function actionCard($idCustomer)
+	{
+		$page = 'customers';
+
+		$customerData = Customer::getCustomerData($idCustomer);
+
+		$projectsList = Project::getAListOfClientProjects($idCustomer);
+
+		require_once(ROOT.'/views/customers/card.php');
+
+		return true;
+	}
+
 }

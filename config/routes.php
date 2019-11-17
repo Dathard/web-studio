@@ -10,6 +10,7 @@ return array(
 	'personnel' => 'personnel/list',
 
 	'customers' => 'customer/list',
+	'customer/([0-9]+)' => 'customer/card/$1',
 
 	'' => 'project/list'
 );

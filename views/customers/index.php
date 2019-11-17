@@ -43,7 +43,7 @@
 						<p><?php echo $customer['email'] ?></p>
 					</div>
 					<div class="operations">
-						<a href="/customer/<?php echo $customer['id'] ?>" title="Замовлення користувача">
+						<a href="/customer/<?php echo $customer['id'] ?>" title="Картка клієнта">
 							<i class="far fa-list-alt"></i>
 						</a>
 					</div>
