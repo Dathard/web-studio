@@ -16,4 +16,17 @@ class PersonnelController
 		return true;
 	}
 
+	public function actionCard($idPersonnel)
+	{
+		$page = 'personnel';
+
+		$personnelData = Personnel::getPersonnelData($idPersonnel);
+
+		$accounting = Personnel::getAccounting($idPersonnel);
+
+		require_once(ROOT.'/views/personnel/card.php');
+
+		return true;
+	}
+
 }

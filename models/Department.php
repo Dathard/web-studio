@@ -25,7 +25,7 @@ class Department
 
 			array_push($departmentsList, array(
 				'id'					=>	$row['id_department'],
-				'address'				=>	$row['address'],
+				'address'				=>	$row['address_department'],
 				'site'					=>	$row['site'],
 				'amount_of_workers'		=>	$personnel['COUNT(*)'],
 				'unfinished_projects'	=> 	$unfinishedProjects['COUNT(*)']

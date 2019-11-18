@@ -566,3 +566,43 @@ h2.page_header{
 #customer_card p span{
     font-style: italic;
 }
+
+
+
+.personnel_card_wrapper{
+    display: inherit;
+}
+.personnel_card_wrapper > div{
+    width: 610px;
+    max-width: 610px;
+    min-width: 610px;
+}
+.personnel_card_wrapper #personnel_card{
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    background: #fff;
+}
+.personnel_card_wrapper #projects{
+    width: 610px;
+    max-width: 610px;
+    min-width: 610px;
+}
+#personnel_card .page_header{
+    padding-bottom: 5px;
+}
+#personnel_card p{
+    padding: 5px 25px;
+    margin: 0;
+}
+#personnel_card p span{
+    font-style: italic;
+}
+#accounting .premium {
+    width: 190px;
+}
+#accounting .allowances {
+    width: 190px;
+}
+#accounting .salary {
+    width: 190px;
+}
