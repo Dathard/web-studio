@@ -33,19 +33,19 @@ class Personnel
 		FROM personnel
 		LEFT JOIN requisites ON personnel.id_personnel=requisites.id_requisites
 		LEFT JOIN departments ON personnel.id_department=departments.id_department
-		WHERE personnel.id_personnel = 1";
+		WHERE personnel.id_personnel = $idPersonnel";
 
 		$result = $db->query($sql);
 
 		$row = $result->fetch_assoc();
 
 		return array(
-			'full-name'	=>	$row['last_name'].' '.$row['name'].' '.$row['surname'],
-			'phone'		=>	$row['phone'],
-			'position'		=>	$row['position'],
-			'address'		=>	$row['address'],
+			'full-name'			=>	$row['last_name'].' '.$row['name'].' '.$row['surname'],
+			'phone'				=>	$row['phone'],
+			'position'			=>	$row['position'],
+			'address'			=>	$row['address'],
 			'card_number'		=>	$row['card_number'],
-			'address_department'		=>	$row['address_department']
+			'address_department'=>	$row['address_department']
 		);
 	}	
 
@@ -65,8 +65,8 @@ class Personnel
 
 		while ( $row = $result->fetch_assoc() ) {
 			array_push($accounting, array(
-				'premium'			=>	$row['premium'],
-				'allowances'		=>	$row['allowances'],
+				'premium'	=>	$row['premium'],
+				'allowances'=>	$row['allowances'],
 				'salary'	=>	$row['salary']
 			));
 		}

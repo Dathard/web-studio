@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 17 2019 г., 01:15
+-- Время создания: Ноя 19 2019 г., 01:50
 -- Версия сервера: 10.3.13-MariaDB-log
 -- Версия PHP: 7.1.32
 
@@ -33,15 +33,17 @@ CREATE TABLE `accounting` (
   `premium` int(11) NOT NULL,
   `allowances` int(11) NOT NULL,
   `salary` int(11) NOT NULL,
-  `date` datetime NOT NULL DEFAULT current_timestamp()
+  `date` datetime NOT NULL DEFAULT current_timestamp(),
+  `card_number` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `accounting`
 --
 
-INSERT INTO `accounting` (`id_accounting`, `premium`, `allowances`, `salary`, `date`) VALUES
-(1, 500, 0, 5000, '2019-10-05 14:45:59');
+INSERT INTO `accounting` (`id_accounting`, `premium`, `allowances`, `salary`, `date`, `card_number`) VALUES
+(1, 1500, 0, 5000, '2019-11-18 10:36:14', '4915 6514 5125 4444'),
+(2, 1500, 0, 5000, '2019-11-18 10:36:14', '4915 6514 5125 4444');
 
 -- --------------------------------------------------------
 
@@ -93,7 +95,7 @@ INSERT INTO `customers` (`id_customer`, `last_name`, `name`, `surname`, `email`,
 
 CREATE TABLE `departments` (
   `id_department` int(11) NOT NULL,
-  `address` text NOT NULL,
+  `address_department` text NOT NULL,
   `site` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -101,30 +103,9 @@ CREATE TABLE `departments` (
 -- Дамп данных таблицы `departments`
 --
 
-INSERT INTO `departments` (`id_department`, `address`, `site`) VALUES
+INSERT INTO `departments` (`id_department`, `address_department`, `site`) VALUES
 (1, 'Ternopil', 'test.ua'),
 (2, 'Kiev', 'sadawe.com.ua');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `partners`
---
-
-CREATE TABLE `partners` (
-  `id_partners` int(11) NOT NULL,
-  `name` text NOT NULL,
-  `site` text NOT NULL,
-  `address` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `partners`
---
-
-INSERT INTO `partners` (`id_partners`, `name`, `site`, `address`) VALUES
-(1, 'test', 'test', 'test'),
-(9, 'Dima', 'dima.com', 'papanina test');
 
 -- --------------------------------------------------------
 
@@ -201,19 +182,18 @@ INSERT INTO `projects` (`id`, `id_department`, `id_package`, `id_servers`, `doma
 --
 
 CREATE TABLE `requisites` (
-  `id_ requisites` int(11) NOT NULL,
+  `id_requisites` int(11) NOT NULL,
   `address` text NOT NULL,
   `phone` text NOT NULL,
-  `card_number` text NOT NULL,
-  `id_accounting` int(11) NOT NULL
+  `card_number` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `requisites`
 --
 
-INSERT INTO `requisites` (`id_ requisites`, `address`, `phone`, `card_number`, `id_accounting`) VALUES
-(1, 'papanina 2', '4915 651 51', '', 1);
+INSERT INTO `requisites` (`id_requisites`, `address`, `phone`, `card_number`) VALUES
+(1, 'papanina 2', '4915 651 51', '4915 6514 5125 4444');
 
 -- --------------------------------------------------------
 
@@ -242,7 +222,8 @@ INSERT INTO `servers` (`id_servers`, `address`) VALUES
 --
 ALTER TABLE `accounting`
   ADD PRIMARY KEY (`id_accounting`),
-  ADD KEY `id_accounting` (`id_accounting`);
+  ADD KEY `id_accounting` (`id_accounting`),
+  ADD KEY `card_number` (`card_number`);
 
 --
 -- Индексы таблицы `category_packages`
@@ -261,12 +242,6 @@ ALTER TABLE `customers`
 --
 ALTER TABLE `departments`
   ADD PRIMARY KEY (`id_department`);
-
---
--- Индексы таблицы `partners`
---
-ALTER TABLE `partners`
-  ADD PRIMARY KEY (`id_partners`);
 
 --
 -- Индексы таблицы `personnel`
@@ -296,9 +271,10 @@ ALTER TABLE `projects`
 -- Индексы таблицы `requisites`
 --
 ALTER TABLE `requisites`
-  ADD PRIMARY KEY (`id_ requisites`),
-  ADD KEY `id_accounting` (`id_accounting`),
-  ADD KEY `id_ requisites` (`id_ requisites`);
+  ADD PRIMARY KEY (`id_requisites`),
+  ADD KEY `id_ requisites` (`id_requisites`),
+  ADD KEY `card_number` (`card_number`),
+  ADD KEY `card_number_2` (`card_number`);
 
 --
 -- Индексы таблицы `servers`
@@ -309,6 +285,12 @@ ALTER TABLE `servers`
 --
 -- AUTO_INCREMENT для сохранённых таблиц
 --
+
+--
+-- AUTO_INCREMENT для таблицы `accounting`
+--
+ALTER TABLE `accounting`
+  MODIFY `id_accounting` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `category_packages`
@@ -327,12 +309,6 @@ ALTER TABLE `customers`
 --
 ALTER TABLE `departments`
   MODIFY `id_department` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
-
---
--- AUTO_INCREMENT для таблицы `partners`
---
-ALTER TABLE `partners`
-  MODIFY `id_partners` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT для таблицы `personnel`
@@ -366,7 +342,7 @@ ALTER TABLE `servers`
 -- Ограничения внешнего ключа таблицы `accounting`
 --
 ALTER TABLE `accounting`
-  ADD CONSTRAINT `accounting_ibfk_1` FOREIGN KEY (`id_accounting`) REFERENCES `personnel` (`id_personnel`);
+  ADD CONSTRAINT `accounting_ibfk_1` FOREIGN KEY (`card_number`) REFERENCES `requisites` (`card_number`);
 
 --
 -- Ограничения внешнего ключа таблицы `personnel`
@@ -393,7 +369,7 @@ ALTER TABLE `projects`
 -- Ограничения внешнего ключа таблицы `requisites`
 --
 ALTER TABLE `requisites`
-  ADD CONSTRAINT `requisites_ibfk_2` FOREIGN KEY (`id_ requisites`) REFERENCES `personnel` (`id_personnel`);
+  ADD CONSTRAINT `requisites_ibfk_2` FOREIGN KEY (`id_requisites`) REFERENCES `personnel` (`id_personnel`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -19,6 +19,7 @@
                 <div class="status">
                     <p>Статус</p>
                 </div>
+                <div class="operations"></div>
             </div>
 
             <?php foreach($projectsList as $project): ?>
@@ -38,6 +39,11 @@
                         <p>
                             <?php echo $project['status'] == 1 ? 'Виконано' : 'Не виконано' ?>
                         </p>
+                    </div>
+                    <div class="operations">
+                        <a href="/project/<?php echo $project['id'] ?>" title="Детальна інформація">
+                            <i class="far fa-list-alt"></i>
+                        </a>
                     </div>
                 </div>
             <?php endforeach ?>

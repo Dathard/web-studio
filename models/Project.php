@@ -18,11 +18,11 @@ class Project
 
 		while ( $row = $result->fetch_assoc() ) {
 			array_push($projectsList, array(
-				'id'			=>	$row['id'],
-				'domain'		=>	$row['domain'],
+				'id'		=>	$row['id'],
+				'domain'	=>	$row['domain'],
 				'package'	=>	$row['package'],
 				'price'		=>	$row['price'],
-				'status'		=>	$row['status']	
+				'status'	=>	$row['status']	
 			));
 		}
 
@@ -45,15 +45,42 @@ class Project
 
 		while ( $row = $result->fetch_assoc() ) {
 			array_push($projectsList, array(
-				'id'			=>	$row['id'],
-				'domain'		=>	$row['domain'],
+				'id'		=>	$row['id'],
+				'domain'	=>	$row['domain'],
 				'package'	=>	$row['package'],
 				'price'		=>	$row['price'],
-				'status'		=>	$row['status']	
+				'status'	=>	$row['status']	
 			));
 		}
 
 		return $projectsList;
 	}	
+
+	public static function getProjectData($idProject)
+	{
+		$db = Db::getConnection();
+
+		$sql = "SELECT
+		projects.id, projects.domain, price_list.package, price_list.price, departments.address_department, customers.id_customer, customers.last_name, customers.name, customers.surname
+		FROM projects
+		LEFT JOIN price_list ON projects.id_package=price_list.id_package
+		LEFT JOIN departments ON projects.id_department=departments.id_department
+		LEFT JOIN customers ON projects.id_customer=customers.id_customer
+		WHERE projects.id = $idProject";
+
+		$result = $db->query($sql);
+
+		$row = $result->fetch_assoc();
+
+		return array(
+			'id'				=>	$row['id'],
+			'domain'			=>	$row['domain'],
+			'package'			=>	$row['package'],
+			'price'				=>	$row['price'],
+			'address_department'=>	$row['address_department'],
+			'id_customer'		=>	$row['id_customer'],
+			'full-name'			=>	$row['last_name'].' '.$row['name'].' '.$row['surname']
+		);
+	}
 
 }

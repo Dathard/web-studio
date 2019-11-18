@@ -2,9 +2,10 @@
 
 <?php include ROOT.'/views/layouts/sidebar.php'; ?>
 
-<section class="page customer_card_wrapper">
-	<div id="customer_card" class="wrapperPage">
+<section class="page card_wrapper">
+	<div id="customer_card" class="card wrapperPage">
 		<h2 class="page_header"><?php echo $customerData['full-name']; ?></h2>
+		<hr>
 		<div>
 			<p>Email: 
 				<span>

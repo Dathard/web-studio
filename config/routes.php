@@ -2,6 +2,7 @@
 
 return array(
 	'projects' => 'project/list',
+	'project/([0-9]+)' => 'project/card/$1',
 
 	'price-list' => 'priceList/list',
 

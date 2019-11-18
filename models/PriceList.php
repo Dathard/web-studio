@@ -20,7 +20,7 @@ class PriceList
 
 			while ( $package = $packages->fetch_assoc() ) {
 				array_push($packageList, array(
-					'id_package'	=>	$package['id_package'],
+					'id_package'=>	$package['id_package'],
 					'package'	=>	$package['package'],
 					'price'		=>	$package['price']
 				));
