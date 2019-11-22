@@ -20,10 +20,23 @@ $(window).on('load', function () {
 			contentType: false,
 			processData: false,
 			success:function(data){
-				if ( formId == 'new_project_form' ) {
+				switch (formId) {
+					case 'new_project_form':
 					$("#projects .show_new_project_modal").after(data);
 					closeModal('.new_project_wrapper');
+					break;
+
+					case 'new_customer_form':
+					$("#customers .show_new_customers_modal").after(data);
+					closeModal('.new_customer_wrapper');
+					break;
+
+					case 'new_department_form':
+					$("#departments .show_new_department_modal").after(data);
+					closeModal('.new_department_wrapper');
+					break;
 				}
+
 			}
 		});
 

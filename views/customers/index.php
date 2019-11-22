@@ -9,11 +9,13 @@
 			<div>
 				<select name="department" id="department">
 					<option value="value1" selected >Усі клієнти</option> 
+
 					<?php foreach($departmentsList as $department): ?>
 						<option value="<?php echo $department['id']; ?>">
 							<?php echo $department['address']; ?>
 						</option>
 					<?php endforeach ?>
+
 				</select>
 			</div>
 		</div>
@@ -30,6 +32,10 @@
 				</div>
 				<div class="operations"></div>
 			</div>
+
+			<div class="row show_new_customers_modal" onclick="showNewCustomerModal();" title="Новий проект">
+                <div>+</div>
+            </div>
 
 			<?php foreach( $customersList as $customer ): ?>
 				<div id="row_<?php echo $customer['id'] ?>" class="row">
@@ -53,5 +59,7 @@
 		</div>
 	</div>
 </section>
+
+<?php include_once ROOT.'/views/customers/modals/new-customers.php'; ?>
 
 <?php include ROOT.'/views/layouts/footer.php'; ?>

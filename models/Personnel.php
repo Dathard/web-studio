@@ -7,7 +7,7 @@ class Personnel
 	{
 		$db = Db::getConnection();
 
-		$sql = "SELECT * FROM personnel";
+		$sql = "SELECT * FROM personnel ORDER BY id_personnel DESC";
 		$result = $db->query($sql);
 
 		$personnelList = array();

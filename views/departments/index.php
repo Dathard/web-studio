@@ -21,8 +21,12 @@
                 </div>
             </div>
 
+            <div class="row show_new_department_modal" onclick="showNewDepartmentModal();" title="Новий проект">
+                <div>+</div>
+            </div>
+
             <?php foreach($departmentsList as $department): ?>
-                <div id="row_<?php echo $department['id']; ?>" class="row" title="Детальна інформація">
+                <div id="row_<?php echo $department['id']; ?>" class="row">
                     <div class="address">
                         <p><?php echo $department['address']; ?></p>
                     </div>
@@ -41,5 +45,7 @@
         </div>
     </div>
 </section>
+
+<?php include_once ROOT.'/views/departments/modals/new-department.php'; ?>
 
 <?php include_once ROOT.'/views/layouts/footer.php'; ?>

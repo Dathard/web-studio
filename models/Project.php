@@ -10,7 +10,8 @@ class Project
 		$sql = "SELECT
 		projects.id, projects.domain, projects.status, price_list.package, price_list.price 
 		FROM projects
-		LEFT JOIN price_list ON projects.id_package=price_list.id_package";
+		LEFT JOIN price_list ON projects.id_package=price_list.id_package
+		ORDER BY projects.id DESC";
 
 		$result = $db->query($sql);
 

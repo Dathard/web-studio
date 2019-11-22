@@ -516,6 +516,9 @@ h2.page_header
 .modal .screen_input
 {
     line-height: 38px;
+    position: absolute!important;
+    border: none;
+    background: inherit;
 }
 
 
@@ -538,7 +541,7 @@ h2.page_header
     height: 100vh;
     padding: 15px;
 
-    background: #00080;
+    background: #00000080;
 }
 .new_project_wrapper.active
 {
@@ -580,6 +583,7 @@ h2.page_header
 #new_project form div
 {
     width: 100%;
+    position: relative;
 }
 #new_project form p
 {
@@ -651,7 +655,7 @@ h2.page_header
     height: 100vh;
     padding: 15px;
 
-    background: #00080;
+    background: #00000080;
 }
 .departments_modal_wrapper.active,
 .customers_modal_wrapper.active
@@ -721,6 +725,13 @@ h2.page_header
     width: 720px;
     min-width: 720px;
 }
+#departments .show_new_department_modal 
+{
+    font-size: 2rem;
+    height: 55px!important;
+    color: #8d9ea7;
+    cursor: pointer!important;
+}
 #departments .table .address
 {
     -webkit-box-sizing: border-box;
@@ -761,6 +772,120 @@ h2.page_header
     -webkit-box-flex: 2;
     -ms-flex-positive: 2;
     flex-grow: 2;
+}
+
+
+
+
+
+/* Новий клієнт */
+.new_department_wrapper
+{
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    padding: 15px;
+
+    background: #00000080;
+}
+.new_department_wrapper.active
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+#new_department
+{
+    overflow-y: auto;
+
+    width: 540px;
+    min-width: 540px;
+    max-width: 540px;
+    min-height: 300px;
+    max-height: 90%;
+    margin: auto;
+
+    background: #fff;
+}
+#new_department .page_header
+{
+    position: relative;
+}
+#new_department .page_header .close
+{
+    position: absolute;
+    right: 10px;
+
+    cursor: pointer;
+}
+#new_department form
+{
+    position: relative;
+
+    margin-top: -10px;
+    padding: 0 25px 20px;
+}
+#new_department form div
+{
+    width: 100%;
+    position: relative;
+}
+#new_department form p
+{
+    font-size: 16px;
+    font-weight: 500;
+
+    overflow-x: hidden;
+
+    margin: 0;
+    margin-top: 5px;
+    padding-top: 10px;
+
+    text-transform: inherit;
+
+    color: #313131;
+}
+#new_department form button
+{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.42857143;
+
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding: 6px 12px;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    color: #fff;
+    border: 1px solid #53e69d;
+    border-radius: 4px;
+    background: #53e69d;
+    background-image: none;
+
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
+}
+#new_department form button:hover
+{
+    cursor: pointer;
+
+    border-color: #4aca8a;
+    background: #4aca8a;
 }
 
 
@@ -981,6 +1106,15 @@ h2.page_header
     margin-right: 20px;
     margin-bottom: 30px;
 }
+#customers .row.show_new_customers_modal
+{
+    font-size: 2rem;
+
+    height: 55px!important;
+
+    color: #8d9ea7;
+    cursor: pointer!important;
+}
 #customers .row
 {
     cursor: default!important;
@@ -1026,6 +1160,120 @@ h2.page_header
 #customers .operations a
 {
     font-size: 25px;
+}
+
+
+
+
+
+/* Новий клієнт */
+.new_customer_wrapper
+{
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    padding: 15px;
+
+    background: #00000080;
+}
+.new_customer_wrapper.active
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+#new_customer
+{
+    overflow-y: auto;
+
+    width: 540px;
+    min-width: 540px;
+    max-width: 540px;
+    min-height: 300px;
+    max-height: 90%;
+    margin: auto;
+
+    background: #fff;
+}
+#new_customer .page_header
+{
+    position: relative;
+}
+#new_customer .page_header .close
+{
+    position: absolute;
+    right: 10px;
+
+    cursor: pointer;
+}
+#new_customer form
+{
+    position: relative;
+
+    margin-top: -10px;
+    padding: 0 25px 20px;
+}
+#new_customer form div
+{
+    width: 100%;
+    position: relative;
+}
+#new_customer form p
+{
+    font-size: 16px;
+    font-weight: 500;
+
+    overflow-x: hidden;
+
+    margin: 0;
+    margin-top: 5px;
+    padding-top: 10px;
+
+    text-transform: inherit;
+
+    color: #313131;
+}
+#new_customer form button
+{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.42857143;
+
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding: 6px 12px;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    color: #fff;
+    border: 1px solid #53e69d;
+    border-radius: 4px;
+    background: #53e69d;
+    background-image: none;
+
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
+}
+#new_customer form button:hover
+{
+    cursor: pointer;
+
+    border-color: #4aca8a;
+    background: #4aca8a;
 }
 
 

@@ -23,4 +23,13 @@ class DepartmentController
 		return true;
 	}
 
+	public function actionNew()
+	{
+		$departmentsList = Department::newDepartment($_POST);
+
+		require_once(ROOT.'/views/departments/department-element.php');
+
+		return true;
+	}
+
 }

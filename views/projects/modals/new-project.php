@@ -7,11 +7,11 @@
         <form id="new_project_form" action="project/new" method="post">
             <div>
                 <p>Домен</p>
-                <input type="text" name="domain">
+                <input type="url" name="domain" required>
             </div>
             <div>
                 <p>Пакет</p>
-                <select name="package" id="package">
+                <select name="package" id="package" required>
 
                     <?php foreach ($priceList as $category): ?>
                         <?php foreach ($category['packages'] as $package): ?>
@@ -25,12 +25,14 @@
             </div>
             <div>
                 <p>Відділення</p>
-                <div id="department" class="screen_input" onclick="showDepartmentsModal('#new_project_form #department');"></div>
+                <div class="screen_input" onclick="showDepartmentsModal('#new_project_form #department');"></div>
+                <input id="department" type="text" required>
                 <input type="hidden" id="department_id" name="department_id">
             </div>
             <div>
                 <p>Клієнт</p>
-                <div id="customer" class="screen_input" onclick="showCustomersModal('#new_project_form #customer');"></div>
+                <div class="screen_input" onclick="showCustomersModal('#new_project_form #customer');"></div>
+                <input id="customer" type="text" required>
                 <input type="hidden" id="customer_id" name="customer_id">
             </div>
 
@@ -45,7 +47,7 @@
 <script>
     $( "#departments_modal .departments_list" ).on( "click", "li", function() {
         let text = $('#'+this.id).text()
-        $('#new_project #department').text(text);
+        $('#new_project #department').val(text);
 
         let id = this.id.split('-');
         id = id[id.length - 1];
@@ -56,7 +58,7 @@
 
     $( "#customers_modal .customers_list" ).on( "click", "li", function() {
         let text = $('#'+this.id).text()
-        $('#new_project #customer').text(text);
+        $('#new_project #customer').val(text);
         let id = this.id.split('-');
         id = id[id.length - 1];
         $('#new_project #customer_id').val(id);

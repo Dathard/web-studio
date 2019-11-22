@@ -38,4 +38,13 @@ class CustomerController
 		return true;
 	}
 
+	public function actionNew()
+	{
+		$customerData = Customer::newCustomer($_POST);
+
+		require_once(ROOT.'/views/customers/customer-element.php');
+
+		return true;
+	}
+
 }
