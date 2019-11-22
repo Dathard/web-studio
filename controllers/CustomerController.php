@@ -29,4 +29,13 @@ class CustomerController
 		return true;
 	}
 
+	public function actionAjaxList()
+	{
+		$customerData = Customer::getCustomersList();
+
+		require_once(ROOT.'/views/customers/modals/customers-modal-list-data.php');
+
+		return true;
+	}
+
 }

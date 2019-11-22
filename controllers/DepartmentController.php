@@ -14,4 +14,13 @@ class DepartmentController
 		return true;
 	}
 
+	public function actionAjaxList()
+	{
+		$departmentsList = Department::getDepartmentsList();
+
+		require_once(ROOT.'/views/departments/modals/departments-modal-list-data.php');
+
+		return true;
+	}
+
 }

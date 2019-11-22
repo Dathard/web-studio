@@ -22,10 +22,6 @@
                 <div class="operations"></div>
             </div>
 
-            <div class="row show_new_project_modal" onclick="showNewProjectModal();" title="Новий проект">
-                <div>+</div>
-            </div>
-
             <?php foreach($projectsList as $project): ?>
                 <div id="row_<?php echo $project['id']; ?>" class="row">
                     <div class="domain">
@@ -51,7 +47,6 @@
                     </div>
                 </div>
             <?php endforeach ?>
-            
         </div>
     </div>
 
@@ -87,7 +82,5 @@
     </div>
 
 </section>
-
-<?php include_once ROOT.'/views/projects/modals/new-project.php'; ?>
 
 <?php include_once ROOT.'/views/layouts/footer.php'; ?>
