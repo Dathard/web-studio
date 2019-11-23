@@ -42,21 +42,27 @@ class Customer
 
 	public static function newCustomer($data)
 	{
+		$lastName = addslashes(htmlspecialchars($data['last_name']));
+		$name = addslashes(htmlspecialchars($data['name']));
+		$surname = addslashes(htmlspecialchars($data['surname']));
+		$email = addslashes(htmlspecialchars($data['email']));
+		$phone = addslashes(htmlspecialchars($data['phone']));
+
 		$db = Db::getConnection();
 
 		$sql = "INSERT INTO `customers` 
 		(`last_name`, `name`, `surname`, `email`, `phone`) 
 		VALUES 
-		('".$data['last_name']."', '".$data['name']."', '".$data['surname']."', '".$data['email']."', '".$data['phone']."');";
+		('".$lastName."', '".$name."', '".$surname."', '".$email."', '".$phone."');";
 
 		$db->query($sql);
 
 		$sql = "SELECT * FROM customers 
-		WHERE last_name = '".$data['last_name']."' 
-		AND name = '".$data['name']."' 
-		AND surname = '".$data['surname']."' 
-		AND email = '".$data['email']."' 
-		AND phone = '".$data['phone']."' 
+		WHERE last_name = '".$lastName."' 
+		AND name = '".$name."' 
+		AND surname = '".$surname."' 
+		AND email = '".$email."' 
+		AND phone = '".$phone."' 
 		ORDER BY id_customer DESC LIMIT 1";
 
 		$result = $db->query($sql);

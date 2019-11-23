@@ -6,6 +6,8 @@ return array(
 	'project/([0-9]+)' => 'project/card/$1',
 	'project/new' => 'project/new',
 
+	'price-list/new-category' => 'priceList/newCategory',
+	'price-list/new-package' => 'priceList/newPackage',
 	'price-list' => 'priceList/list',
 
 	'departments/ajax' => 'department/ajaxList',

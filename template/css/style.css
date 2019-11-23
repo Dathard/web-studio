@@ -25,7 +25,7 @@ select
     display: inline-block;
 
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     max-width: 250px;
     height: 32px;
     padding-right: 40px;
@@ -44,8 +44,8 @@ select
     background-size: 14px 7px;
 
     -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 :active,
 :hover,
@@ -68,12 +68,12 @@ select
     padding-top: 0;
 
     -webkit-transition: .5s cubic-bezier(.55, .09, .68, .53);
-         -o-transition: .5s cubic-bezier(.55, .09, .68, .53);
-            transition: .5s cubic-bezier(.55, .09, .68, .53);
+    -o-transition: .5s cubic-bezier(.55, .09, .68, .53);
+    transition: .5s cubic-bezier(.55, .09, .68, .53);
 
     background: #2f323e;
     -webkit-box-shadow: 1px 0 20px rgba(0, 0, 0, .08);
-            box-shadow: 1px 0 20px rgba(0, 0, 0, .08);
+    box-shadow: 1px 0 20px rgba(0, 0, 0, .08);
 }
 .sidebar .sidebar-head
 {
@@ -116,8 +116,8 @@ select
     margin-left: 4px;
 
     -webkit-transition: .3s;
-         -o-transition: .3s;
-            transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
 
     opacity: 0;
 }
@@ -354,15 +354,15 @@ h2.page_header
 
     cursor: pointer;
     -webkit-transition: .4s;
-         -o-transition: .4s;
-            transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
     text-align: center;
 }
 .wrapperCategories .category.active .categoryName span
 {
     -webkit-transform: rotate(-270deg);
-        -ms-transform: rotate(-270deg);
-            transform: rotate(-270deg);
+    -ms-transform: rotate(-270deg);
+    transform: rotate(-270deg);
 }
 
 .wrapperCategories .category ul
@@ -380,8 +380,8 @@ h2.page_header
     list-style: none;
 
     -webkit-transition: .4s;
-         -o-transition: .4s;
-            transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
 
     opacity: 0;
 }
@@ -494,7 +494,7 @@ h2.page_header
     font-size: 16px;
 
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     max-width: 100%;
     height: 38px;
@@ -503,15 +503,15 @@ h2.page_header
 
     cursor: pointer;
     -webkit-transition: all 300ms linear 0s;
-         -o-transition: all 300ms linear 0s;
-            transition: all 300ms linear 0s;
+    -o-transition: all 300ms linear 0s;
+    transition: all 300ms linear 0s;
 
     color: #565656;
     border: 1px solid #e4e7ea;
     border-radius: 4px;
     background-color: #fff;
     -webkit-box-shadow: none;
-            box-shadow: none;
+    box-shadow: none;
 }
 .modal .screen_input
 {
@@ -536,7 +536,7 @@ h2.page_header
     display: none;
 
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 100vh;
     padding: 15px;
@@ -611,9 +611,9 @@ h2.page_header
     padding: 6px 12px;
 
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     text-align: center;
     vertical-align: middle;
     white-space: nowrap;
@@ -625,7 +625,7 @@ h2.page_header
     background-image: none;
 
     -ms-touch-action: manipulation;
-        touch-action: manipulation;
+    touch-action: manipulation;
 }
 #new_project form button:hover
 {
@@ -650,7 +650,7 @@ h2.page_header
     display: none;
 
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 100vh;
     padding: 15px;
@@ -697,7 +697,7 @@ h2.page_header
     display: block;
 
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     padding: 10px 20px;
 
@@ -735,7 +735,7 @@ h2.page_header
 #departments .table .address
 {
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 220px;
     padding-left: 20px;
 
@@ -778,7 +778,7 @@ h2.page_header
 
 
 
-/* Новий клієнт */
+/* Нове відділення */
 .new_department_wrapper
 {
     position: absolute;
@@ -789,7 +789,7 @@ h2.page_header
     display: none;
 
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 100vh;
     padding: 15px;
@@ -864,9 +864,9 @@ h2.page_header
     padding: 6px 12px;
 
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     text-align: center;
     vertical-align: middle;
     white-space: nowrap;
@@ -878,7 +878,7 @@ h2.page_header
     background-image: none;
 
     -ms-touch-action: manipulation;
-        touch-action: manipulation;
+    touch-action: manipulation;
 }
 #new_department form button:hover
 {
@@ -897,6 +897,23 @@ h2.page_header
 {
     width: 350px;
     min-width: 350px;
+}
+#price-list .page_header span.add {
+    position: absolute;
+    display: flex;
+    right: 25px;
+    top: 18px;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    color: #fff;
+    background: #2f323e;
+    justify-content: center;
+    border-radius: 3px;
+}
+#price-list .page_header span.add:hover{
+    cursor:pointer;
+    opacity:.9;
 }
 #price-list .category
 {
@@ -930,31 +947,31 @@ h2.page_header
 
     cursor: pointer;
     -webkit-transition: .4s;
-         -o-transition: .4s;
-            transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 #price-list .category.active h2 span.expandCategory
 {
     -webkit-transform: translate(-50%, -50%) rotate(-270deg);
-        -ms-transform: translate(-50%, -50%) rotate(-270deg);
-            transform: translate(-50%, -50%) rotate(-270deg);
+    -ms-transform: translate(-50%, -50%) rotate(-270deg);
+    transform: translate(-50%, -50%) rotate(-270deg);
 }
 #price-list .category > div
 {
     overflow: hidden;
 
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     height: 0;
     padding: 0 25px;
 
     -webkit-transition: .4s;
-         -o-transition: .4s;
-            transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
 
     opacity: 0;
     background: #edf1f526;
@@ -996,6 +1013,134 @@ h2.page_header
     max-width: 100%;
 
     word-wrap: break-word;
+}
+
+
+
+
+
+/* Парйс лист модальні вікна */
+.wrapper_modal
+{
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    padding: 15px;
+
+    background: #00000080;
+}
+.wrapper_modal.active
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.modal
+{
+    overflow-y: auto;
+
+    width: 540px;
+    min-width: 540px;
+    max-width: 540px;
+    min-height: inherit;
+    max-height: 90%;
+    margin: auto;
+
+    background: #fff;
+}
+.modal .page_header
+{
+    position: relative;
+}
+.modal .page_header .close
+{
+    position: absolute;
+    right: 10px;
+
+    cursor: pointer;
+}
+.modal form
+{
+    position: relative;
+
+    margin-top: -10px;
+    padding: 0 25px 20px;
+}
+.modal form div
+{
+    width: 100%;
+    position: relative;
+}
+.modal form p
+{
+    font-size: 16px;
+    font-weight: 500;
+
+    overflow-x: hidden;
+
+    margin: 0;
+    margin-top: 5px;
+    padding-top: 10px;
+
+    text-transform: inherit;
+
+    color: #313131;
+}
+.modal button
+{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.42857143;
+
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding: 6px 12px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    color: #fff;
+    border: 1px solid #53e69d;
+    border-radius: 4px;
+    background: #53e69d;
+    background-image: none;
+
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+.modal button:hover
+{
+    cursor: pointer;
+
+    border-color: #4aca8a;
+    background: #4aca8a;
+}
+
+
+#select_action{
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    min-height: inherit;
+}
+#select_action > div{
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+    padding-bottom: 25px;
 }
 
 
@@ -1050,7 +1195,7 @@ h2.page_header
 #personnel .full-name
 {
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 280px;
     padding-left: 20px;
 
@@ -1097,7 +1242,7 @@ h2.page_header
     display: none;
 
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 100vh;
     padding: 15px;
@@ -1172,9 +1317,9 @@ h2.page_header
     padding: 6px 12px;
 
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     text-align: center;
     vertical-align: middle;
     white-space: nowrap;
@@ -1186,7 +1331,7 @@ h2.page_header
     background-image: none;
 
     -ms-touch-action: manipulation;
-        touch-action: manipulation;
+    touch-action: manipulation;
 }
 #new_employee form button:hover
 {
@@ -1249,7 +1394,7 @@ h2.page_header
 #customers .full-name
 {
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 280px;
     padding-left: 20px;
 
@@ -1304,7 +1449,7 @@ h2.page_header
     display: none;
 
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 100vh;
     padding: 15px;
@@ -1379,9 +1524,9 @@ h2.page_header
     padding: 6px 12px;
 
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     text-align: center;
     vertical-align: middle;
     white-space: nowrap;
@@ -1393,7 +1538,7 @@ h2.page_header
     background-image: none;
 
     -ms-touch-action: manipulation;
-        touch-action: manipulation;
+    touch-action: manipulation;
 }
 #new_customer form button:hover
 {

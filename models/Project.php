@@ -113,12 +113,17 @@ class Project
 
 	public static function newProject($data)
 	{
+		$departmentId = addslashes(htmlspecialchars($data['department_id']));
+		$package = addslashes(htmlspecialchars($data['package']));
+		$domain = addslashes(htmlspecialchars($data['domain']));
+		$customerId = addslashes(htmlspecialchars($data['customer_id']));
+
 		$db = Db::getConnection();
 
 		$sql = "INSERT INTO `projects` 
 		(`id_department`, `id_package`, `id_servers`, `domain`, `id_customer`) 
 		VALUES 
-		('".$data['department_id']."', '".$data['package']."', '1', '".$data['domain']."', '".$data['customer_id']."');";
+		('".$departmentId."', '".$package."', '1', '".$domain."', '".$customerId."');";
 
 		$db->query($sql);
 
@@ -126,9 +131,9 @@ class Project
 		projects.id, projects.domain, projects.status, price_list.package, price_list.price 
 		FROM projects
 		LEFT JOIN price_list ON projects.id_package=price_list.id_package 
-		WHERE projects.id_package = '".$data['package']."'
-		AND projects.domain = '".$data['domain']."'
-		AND projects.id_customer = '".$data['customer_id']."'
+		WHERE projects.id_package = '".$package."'
+		AND projects.domain = '".$domain."'
+		AND projects.id_customer = '".$customerId."'
 		ORDER BY projects.id DESC LIMIT 1";
 
 		$result = $db->query($sql);

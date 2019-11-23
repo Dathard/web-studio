@@ -36,4 +36,34 @@ class PriceList
 		return $priceList;
 	}
 
+	public static function newCategory($data)
+	{
+		$categoryName = addslashes(htmlspecialchars($data['category_name']));
+
+		$db = Db::getConnection();
+
+		$sql = "INSERT INTO `category_packages` 
+		(`category_name`) 
+		VALUES 
+		('".$categoryName."');";
+
+		$db->query($sql);
+	}
+
+	public static function newPackage($data)
+	{
+		$category = addslashes(htmlspecialchars($data['category']));
+		$package = addslashes(htmlspecialchars($data['package']));
+		$price = addslashes(htmlspecialchars($data['price']));
+
+		$db = Db::getConnection();
+
+		$sql = "INSERT INTO `price_list` 
+		(`id_category`, `package`, `price`) 
+		VALUES 
+		('".$category."', '".$package."', '".$price."');";
+
+		$db->query($sql);
+	}
+
 }

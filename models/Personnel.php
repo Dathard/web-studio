@@ -76,20 +76,31 @@ class Personnel
 
 	public static function newEmployee($data)
 	{
+		$lastName = addslashes(htmlspecialchars($data['last_name']));
+		$name = addslashes(htmlspecialchars($data['name']));
+		$surname = addslashes(htmlspecialchars($data['surname']));
+		$id_department = addslashes(htmlspecialchars($data['id_department']));
+		$position = addslashes(htmlspecialchars($data['position']));
+		
+		$address = addslashes(htmlspecialchars($data['address']));
+		$phone = addslashes(htmlspecialchars($data['phone']));
+		$card_number = addslashes(htmlspecialchars($data['card_number']));
+
+
 		$db = Db::getConnection();
 
 		$sql = "INSERT INTO `personnel` 
 		(`last_name`, `name`, `surname`, `id_department`, `position`) 
 		VALUES 
-		('".$data['last_name']."', '".$data['name']."', '".$data['surname']."', '".$data['id_department']."', '".$data['position']."');";
+		('".$lastName."', '".$name."', '".$surname."', '".$id_department."', '".$position."');";
 		$db->query($sql);
 
 		$sql = "SELECT * FROM personnel 
-		WHERE last_name = '".$data['last_name']."' 
-		AND name = '".$data['name']."' 
-		AND surname = '".$data['surname']."' 
-		AND id_department = '".$data['id_department']."' 
-		AND position = '".$data['position']."' 
+		WHERE last_name = '".$lastName."' 
+		AND name = '".$name."' 
+		AND surname = '".$surname."' 
+		AND id_department = '".$id_department."' 
+		AND position = '".$position."' 
 		ORDER BY id_personnel DESC";
 		$result = $db->query($sql);
 
@@ -98,7 +109,7 @@ class Personnel
 		$sql = "INSERT INTO `requisites` 
 		(`id_requisites`, `address`, `phone`, `card_number`) 
 		VALUES 
-		('".$row['id_personnel']."', '".$data['address']."', '".$data['phone']."', '".$data['card_number']."');";
+		('".$row['id_personnel']."', '".$address."', '".$phone."', '".$card_number."');";
 		$db->query($sql);
 
 		return array(

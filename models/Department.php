@@ -37,17 +37,20 @@ class Department
 
 	public static function newDepartment($data)
 	{
+		$address = addslashes(htmlspecialchars($data['address']));
+		$site = addslashes(htmlspecialchars($data['site']));
+
 		$db = Db::getConnection();
 
 		$sql = "INSERT INTO `departments` 
 		(`address_department`, `site`) 
 		VALUES 
-		('".$data['address']."', '".$data['site']."');";
+		('".$address."', '".$site."');";
 		$db->query($sql);
 
 		$sql = "SELECT * FROM departments 
-		WHERE address_department = '".$data['address']."' 
-		AND site = '".$data['site']."' 
+		WHERE address_department = '".$address."' 
+		AND site = '".$site."' 
 		ORDER BY id_department DESC LIMIT 1";
 		$result = $db->query($sql);
 

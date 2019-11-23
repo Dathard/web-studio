@@ -14,4 +14,18 @@ class PriceListController
 		return true;
 	}
 
+	public function actionNewCategory()
+	{
+		$projectData = PriceList::newCategory($_POST);
+
+		return true;
+	}
+
+	public function actionNewPackage()
+	{
+		$projectData = PriceList::newPackage($_POST);
+
+		return true;
+	}
+
 }

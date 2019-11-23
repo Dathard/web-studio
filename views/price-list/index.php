@@ -4,7 +4,10 @@
 
 <section class="page">
     <div id="price-list" class="wrapperPage">
-        <h2 class="page_header">Прайс-лист</h2>
+        <h2 class="page_header">
+            Прайс-лист
+            <span class="add" onclick="showAddModal();">+</span>
+        </h2>
         <div class="table">
 
             <?php foreach($priceList as $category): ?>
@@ -31,5 +34,7 @@
         </div>
     </div>
 </section>
+
+<?php include_once ROOT.'/views/price-list/modals/add.php'; ?>
 
 <?php include_once ROOT.'/views/layouts/footer.php'; ?>
