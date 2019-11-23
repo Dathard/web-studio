@@ -74,4 +74,38 @@ class Personnel
 		return $accounting;
 	}
 
+	public static function newEmployee($data)
+	{
+		$db = Db::getConnection();
+
+		$sql = "INSERT INTO `personnel` 
+		(`last_name`, `name`, `surname`, `id_department`, `position`) 
+		VALUES 
+		('".$data['last_name']."', '".$data['name']."', '".$data['surname']."', '".$data['id_department']."', '".$data['position']."');";
+		$db->query($sql);
+
+		$sql = "SELECT * FROM personnel 
+		WHERE last_name = '".$data['last_name']."' 
+		AND name = '".$data['name']."' 
+		AND surname = '".$data['surname']."' 
+		AND id_department = '".$data['id_department']."' 
+		AND position = '".$data['position']."' 
+		ORDER BY id_personnel DESC";
+		$result = $db->query($sql);
+
+		$row = $result->fetch_assoc();
+
+		$sql = "INSERT INTO `requisites` 
+		(`id_requisites`, `address`, `phone`, `card_number`) 
+		VALUES 
+		('".$row['id_personnel']."', '".$data['address']."', '".$data['phone']."', '".$data['card_number']."');";
+		$db->query($sql);
+
+		return array(
+			'id'			=>	$row['id_personnel'],
+			'full-name'		=>	$row['last_name'].' '.$row['name'].' '.$row['surname'],
+			'position'		=>	$row['position']
+		);
+	}
+
 }

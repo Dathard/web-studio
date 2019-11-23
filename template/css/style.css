@@ -999,6 +999,9 @@ h2.page_header
 }
 
 
+
+
+
 /* Персонал */
 #personnel
 {
@@ -1033,6 +1036,13 @@ h2.page_header
     margin-right: 20px;
     margin-bottom: 30px;
 }
+#personnel .row.show_new_employee_modal 
+{
+    font-size: 2rem;
+    height: 55px!important;
+    color: #8d9ea7;
+    cursor: pointer!important;
+}
 #personnel .row
 {
     cursor: default!important;
@@ -1058,6 +1068,8 @@ h2.page_header
 #personnel .position
 {
     width: 190px;
+    flex-grow: 2;
+    justify-content: flex-end;
 }
 #personnel .operations
 {
@@ -1069,6 +1081,121 @@ h2.page_header
 {
     font-size: 25px;
 }
+
+
+
+
+
+/* Новий клієнт */
+.new_employee_wrapper
+{
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    padding: 15px;
+
+    background: #00000080;
+}
+.new_employee_wrapper.active
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+#new_employee
+{
+    overflow-y: auto;
+
+    width: 540px;
+    min-width: 540px;
+    max-width: 540px;
+    min-height: 300px;
+    max-height: 90%;
+    margin: auto;
+
+    background: #fff;
+}
+#new_employee .page_header
+{
+    position: relative;
+}
+#new_employee .page_header .close
+{
+    position: absolute;
+    right: 10px;
+
+    cursor: pointer;
+}
+#new_employee form
+{
+    position: relative;
+
+    margin-top: -10px;
+    padding: 0 25px 20px;
+}
+#new_employee form div
+{
+    width: 100%;
+    position: relative;
+}
+#new_employee form p
+{
+    font-size: 16px;
+    font-weight: 500;
+
+    overflow-x: hidden;
+
+    margin: 0;
+    margin-top: 5px;
+    padding-top: 10px;
+
+    text-transform: inherit;
+
+    color: #313131;
+}
+#new_employee form button
+{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.42857143;
+
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding: 6px 12px;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    color: #fff;
+    border: 1px solid #53e69d;
+    border-radius: 4px;
+    background: #53e69d;
+    background-image: none;
+
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
+}
+#new_employee form button:hover
+{
+    cursor: pointer;
+
+    border-color: #4aca8a;
+    background: #4aca8a;
+}
+
 
 
 

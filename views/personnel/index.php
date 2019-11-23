@@ -21,6 +21,10 @@
         </div>
         <div class="table">
 
+            <div class="row show_new_employee_modal" onclick="showNewEmployeeModal();" title="Новий проект">
+                <div>+</div>
+            </div>
+
             <?php foreach($personnelList as $personnel): ?>
                 <div id="row_<?php echo $personnel['id'] ?>" class="row">
                     <div class="full-name">
@@ -40,5 +44,7 @@
         </div>
     </div>
 </section>
+
+<?php include_once ROOT.'/views/personnel/modals/new-employee.php'; ?>
 
 <?php include_once ROOT.'/views/layouts/footer.php'; ?>

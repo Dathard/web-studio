@@ -5,10 +5,12 @@
             <span class="close" onclick="closeModal('.new_department_wrapper')">X</span>
         </h2>
         <form id="new_department_form" action="department/new" method="post">
+
             <div>
                 <p>Aдреса відділення</p>
                 <input type="text" name="address" required>
             </div>
+            
             <div>
                 <p>Сайт</p>
                 <input type="url" name="site" required>

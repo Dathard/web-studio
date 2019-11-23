@@ -13,6 +13,7 @@ return array(
 	'department/new' => 'department/new',
 
 	'personnel/([0-9]+)' => 'personnel/card/$1',
+	'personnel/new' => 'personnel/new',
 	'personnel' => 'personnel/list',
 
 	'customers/ajax' => 'customer/ajaxList',

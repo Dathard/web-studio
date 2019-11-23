@@ -5,28 +5,34 @@
             <span class="close" onclick="closeModal('.new_customer_wrapper')">X</span>
         </h2>
         <form id="new_customer_form" action="customer/new" method="post">
+
             <div>
                 <p>Відділення</p>
                 <div class="screen_input" onclick="showDepartmentsModal('#new_project_form #department');"></div>
                 <input id="department" type="text" required>
                 <input type="hidden" id="department_id" name="department_id">
             </div>
+
             <div>
-                <p>Празвище</p>
+                <p>Прізвище</p>
                 <input type="text" name="last_name" required>
             </div>
+
             <div>
                 <p>Ім'я</p>
                 <input type="text" name="name" required>
             </div>
+
             <div>
                 <p>Ім'я по батькові</p>
                 <input type="text" name="surname" required>
             </div>
+
             <div>
                 <p>Email:</p>
                 <input type="email" name="email" required>
             </div>
+            
             <div>
                 <p>Phone:</p>
                 <input id="customer_phone" type="text" name="phone">

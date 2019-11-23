@@ -29,4 +29,13 @@ class PersonnelController
 		return true;
 	}
 
+	public function actionNew()
+	{
+		$personnelData = Personnel::newEmployee($_POST);
+
+		require_once(ROOT.'/views/personnel/personnel-element.php');
+
+		return true;
+	}
+
 }

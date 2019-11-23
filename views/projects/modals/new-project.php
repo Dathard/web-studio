@@ -5,10 +5,12 @@
             <span class="close" onclick="closeModal('.new_project_wrapper')">X</span>
         </h2>
         <form id="new_project_form" action="project/new" method="post">
+
             <div>
                 <p>Домен</p>
                 <input type="url" name="domain" required>
             </div>
+
             <div>
                 <p>Пакет</p>
                 <select name="package" id="package" required>
@@ -23,12 +25,14 @@
 
                 </select>
             </div>
+
             <div>
                 <p>Відділення</p>
                 <div class="screen_input" onclick="showDepartmentsModal('#new_project_form #department');"></div>
                 <input id="department" type="text" required>
                 <input type="hidden" id="department_id" name="department_id">
             </div>
+            
             <div>
                 <p>Клієнт</p>
                 <div class="screen_input" onclick="showCustomersModal('#new_project_form #customer');"></div>

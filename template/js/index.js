@@ -20,6 +20,7 @@ $(window).on('load', function () {
 			contentType: false,
 			processData: false,
 			success:function(data){
+				alert(data);
 				switch (formId) {
 					case 'new_project_form':
 					$("#projects .show_new_project_modal").after(data);
@@ -34,6 +35,11 @@ $(window).on('load', function () {
 					case 'new_department_form':
 					$("#departments .show_new_department_modal").after(data);
 					closeModal('.new_department_wrapper');
+					break;
+
+					case 'new_employee_form':
+					$("#personnel .show_new_employee_modal").after(data);
+					closeModal('.new_employee_wrapper');
 					break;
 				}
 

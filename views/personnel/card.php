@@ -21,7 +21,7 @@
 					<?php echo $personnelData['address']; ?>
 				</span>
 			</p>
-			<p>Phone: 
+			<p>Номер телефону: 
 				<span>
 					<?php echo $personnelData['phone']; ?>
 				</span>
