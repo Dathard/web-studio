@@ -1,5 +1,5 @@
-<section class="customers_modal_wrapper modal">
-	<div id="customers_modal" class="wrapperPage">
+<section class="customers_modal_wrapper wrapper_modal">
+	<div id="customers_modal" class="wrapperPage modal">
 		<h2 class="page_header">
 			Клієнти
 			<span class="close" onclick="closeModal('.customers_modal_wrapper')">X</span>

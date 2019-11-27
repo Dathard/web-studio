@@ -1,5 +1,5 @@
-<section class="departments_modal_wrapper modal">
-	<div id="departments_modal" class="wrapperPage">
+<section class="departments_modal_wrapper wrapper_modal">
+	<div id="departments_modal" class="wrapperPage modal">
 		<h2 class="page_header">
 			Відділення
 			<span class="close" onclick="closeModal('.departments_modal_wrapper')">X</span>

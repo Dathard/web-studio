@@ -1,5 +1,5 @@
-<section class="new_project_wrapper modal">
-    <div id="new_project" class="wrapperPage">
+<section class="new_project_wrapper wrapper_modal">
+    <div id="new_project" class="wrapperPage modal">
         <h2 class="page_header">
             Новий проект
             <span class="close" onclick="closeModal('.new_project_wrapper')">X</span>

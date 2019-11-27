@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 19 2019 г., 01:50
+-- Время создания: Ноя 27 2019 г., 09:16
 -- Версия сервера: 10.3.13-MariaDB-log
 -- Версия PHP: 7.1.32
 
@@ -62,7 +62,8 @@ CREATE TABLE `category_packages` (
 
 INSERT INTO `category_packages` (`id_category`, `category_name`) VALUES
 (1, 'Test Category 1'),
-(2, 'Test Category 2');
+(2, 'Test Category 2'),
+(3, 'test');
 
 -- --------------------------------------------------------
 
@@ -85,7 +86,11 @@ CREATE TABLE `customers` (
 
 INSERT INTO `customers` (`id_customer`, `last_name`, `name`, `surname`, `email`, `phone`) VALUES
 (1, 'test', 'test', 'test', 'test@mail.com', '097 867-60-93'),
-(2, 'Антонов', 'Антон', 'Антонович', 'antonov@mail.com', '097 867-60-93');
+(2, 'Антонов', 'Антон', 'Антонович', 'antonov@mail.com', '097 867-60-93'),
+(3, 'qwe', 'qwe', 'qwe', 'qweqw', 'qweqwe'),
+(4, 'Мельничук', 'Дмитро', 'Сергійович', '14dima2015@gmail.com', '(097) 867 6093'),
+(5, 'Мельничук ', 'Сергій', 'Петрович', 'ser@gmail.com', ''),
+(6, 'Мельничук', 'ret', 'Сергійович', '14dima2015@gmail.com', '');
 
 -- --------------------------------------------------------
 
@@ -105,7 +110,9 @@ CREATE TABLE `departments` (
 
 INSERT INTO `departments` (`id_department`, `address_department`, `site`) VALUES
 (1, 'Ternopil', 'test.ua'),
-(2, 'Kiev', 'sadawe.com.ua');
+(2, 'Kiev', 'sadawe.com.ua'),
+(24, 'Lviv', 'https://lv.tyt.erp'),
+(25, 'Lviv', 'https://lv.tyt.erp23');
 
 -- --------------------------------------------------------
 
@@ -128,7 +135,8 @@ CREATE TABLE `personnel` (
 
 INSERT INTO `personnel` (`id_personnel`, `last_name`, `name`, `surname`, `id_department`, `position`) VALUES
 (1, 'Гаврилюк', 'Антон', 'Олександровис', 1, 'Адміністратор'),
-(5, 'Петришин', 'Ігор', 'Антонович', 1, 'Адміністратор');
+(5, 'Петришин', 'Ігор', 'Антонович', 1, 'Адміністратор'),
+(7, 'Мельничук', 'Дмитро', 'Сергійович', 2, 'test');
 
 -- --------------------------------------------------------
 
@@ -149,7 +157,8 @@ CREATE TABLE `price_list` (
 
 INSERT INTO `price_list` (`id_package`, `id_category`, `package`, `price`) VALUES
 (1, 1, 'test', 1100),
-(2, 1, 'test 2', 20000);
+(2, 1, 'test 2', 20000),
+(3, 3, 'Тестовий пакет', 1750);
 
 -- --------------------------------------------------------
 
@@ -173,7 +182,10 @@ CREATE TABLE `projects` (
 
 INSERT INTO `projects` (`id`, `id_department`, `id_package`, `id_servers`, `domain`, `id_customer`, `status`) VALUES
 (1, 1, 1, 1, 'test', 1, 0),
-(2, 2, 1, 1, 'dathard.com', 1, 1);
+(2, 2, 1, 1, 'dathard.com', 1, 1),
+(19, 1, 2, 1, 'test.dathard.com', 2, 0),
+(20, 1, 1, 1, 'tesm.tm.pro', 2, 0),
+(21, 2, 1, 1, 'http://test.dathard.com', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -193,7 +205,8 @@ CREATE TABLE `requisites` (
 --
 
 INSERT INTO `requisites` (`id_requisites`, `address`, `phone`, `card_number`) VALUES
-(1, 'papanina 2', '4915 651 51', '4915 6514 5125 4444');
+(1, 'papanina 2', '4915 651 51', '4915 6514 5125 4444'),
+(7, '', '(097) 867 6093', '0000 0000 0000 0000');
 
 -- --------------------------------------------------------
 
@@ -296,37 +309,37 @@ ALTER TABLE `accounting`
 -- AUTO_INCREMENT для таблицы `category_packages`
 --
 ALTER TABLE `category_packages`
-  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `departments`
 --
 ALTER TABLE `departments`
-  MODIFY `id_department` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_department` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT для таблицы `personnel`
 --
 ALTER TABLE `personnel`
-  MODIFY `id_personnel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_personnel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `price_list`
 --
 ALTER TABLE `price_list`
-  MODIFY `id_package` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_package` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT для таблицы `servers`

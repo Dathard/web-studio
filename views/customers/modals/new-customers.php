@@ -1,5 +1,5 @@
-<section class="new_customer_wrapper modal">
-    <div id="new_customer" class="wrapperPage">
+<section class="new_customer_wrapper wrapper_modal">
+    <div id="new_customer" class="wrapperPage modal">
         <h2 class="page_header">
             Новий клієнт
             <span class="close" onclick="closeModal('.new_customer_wrapper')">X</span>

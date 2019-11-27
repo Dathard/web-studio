@@ -1,5 +1,5 @@
-<section class="new_department_wrapper modal">
-    <div id="new_department" class="wrapperPage">
+<section class="new_department_wrapper wrapper_modal">
+    <div id="new_department" class="wrapperPage modal">
         <h2 class="page_header">
             Нове відділення
             <span class="close" onclick="closeModal('.new_department_wrapper')">X</span>
