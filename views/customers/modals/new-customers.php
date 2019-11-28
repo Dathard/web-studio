@@ -9,7 +9,7 @@
             <div>
                 <p>Відділення</p>
                 <div class="screen_input" onclick="showDepartmentsModal('#new_project_form #department');"></div>
-                <input id="department" type="text" required>
+                <input id="department" type="text" required disabled="disabled">
                 <input type="hidden" id="department_id" name="department_id">
             </div>
 
