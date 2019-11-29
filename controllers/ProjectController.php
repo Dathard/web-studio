@@ -7,6 +7,8 @@ class ProjectController
 	{
 		$page = 'projects';
 
+		$level = "";
+
 		$priceList = PriceList::getlists();
 
 		$projectsList = Project::getProjectsList();
@@ -19,6 +21,8 @@ class ProjectController
 	public function actionPackage($idPackage)
 	{
 		$page = 'projects';
+
+		$level = "../";
 
 		$priceList = PriceList::getlists();
 
@@ -33,7 +37,13 @@ class ProjectController
 	{
 		$page = 'projects';
 
+		$level = "";
+
 		$projectData = Project::getProjectData($idProject);
+
+		if ( $projectData["id"] == NULL ) {
+			return 404;
+		}
 
 		require_once(ROOT.'/views/projects/card.php');
 
@@ -42,6 +52,8 @@ class ProjectController
 
 	public function actionNew()
 	{
+		$level = "";
+		
 		$projectData = Project::newProject($_POST);
 
 		require_once(ROOT.'/views/projects/project-element.php');

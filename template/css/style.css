@@ -1639,3 +1639,20 @@ h2.page_header
 {
     width: 190px;
 }
+
+
+
+
+
+.error-page
+{
+    padding: 5px 35px 10px 75px;
+}
+.error-page h1
+{
+    color: #f84147;
+}
+.error-page p
+{
+    font-size: 36px;
+}

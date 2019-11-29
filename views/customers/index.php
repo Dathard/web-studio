@@ -6,18 +6,6 @@
 	<div id="customers" class="wrapperPage">
 		<div class="header">
 			<h2 class="page_header">Клієнти</h2>
-			<div>
-				<select name="department" id="department">
-					<option value="value1" selected >Усі клієнти</option> 
-
-					<?php foreach($departmentsList as $department): ?>
-						<option value="<?php echo $department['id']; ?>">
-							<?php echo $department['address']; ?>
-						</option>
-					<?php endforeach ?>
-
-				</select>
-			</div>
 		</div>
 		<div class="table">
 			<div class="headerTable">

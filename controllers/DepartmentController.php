@@ -7,6 +7,8 @@ class DepartmentController
 	{
 		$page = 'department';
 
+		$level = "";
+
 		$departmentsList = Department::getDepartmentsList();
 
 		require_once(ROOT.'/views/departments/index.php');
@@ -16,6 +18,8 @@ class DepartmentController
 
 	public function actionAjaxList()
 	{
+		$level = "";
+
 		$departmentsList = Department::getDepartmentsList();
 
 		require_once(ROOT.'/views/departments/modals/departments-modal-list-data.php');
@@ -25,6 +29,8 @@ class DepartmentController
 
 	public function actionNew()
 	{
+		$level = "";
+		
 		$departmentsList = Department::newDepartment($_POST);
 
 		require_once(ROOT.'/views/departments/department-element.php');

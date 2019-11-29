@@ -74,6 +74,8 @@ class Router
 				}else{
 					$controllerFile = ROOT . '/controllers/ErrorController.php';
 					include_once($controllerFile);
+
+					ErrorController::actionNotFound();
 				}
 
 			}

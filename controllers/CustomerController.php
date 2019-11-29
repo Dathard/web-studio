@@ -7,9 +7,12 @@ class CustomerController
 	{
 		$page = 'customers';
 
+		$level = "";
+
 		$departmentsList = Department::getDepartmentsList();
 
 		$customersList = Customer::getCustomersList();
+
 
 		require_once(ROOT.'/views/customers/index.php');
 
@@ -20,7 +23,13 @@ class CustomerController
 	{
 		$page = 'customers';
 
+		$level = "";
+
 		$customerData = Customer::getCustomerData($idCustomer);
+		
+		if ( strlen($customerData["full-name"]) <= 2 ) {
+			return 404;
+		}
 
 		$projectsList = Project::getAListOfClientProjects($idCustomer);
 
@@ -31,6 +40,8 @@ class CustomerController
 
 	public function actionAjaxList()
 	{
+		$level = "";
+
 		$customerData = Customer::getCustomersList();
 
 		require_once(ROOT.'/views/customers/modals/customers-modal-list-data.php');
@@ -40,6 +51,8 @@ class CustomerController
 
 	public function actionNew()
 	{
+		$level = "";
+		
 		$customerData = Customer::newCustomer($_POST);
 
 		require_once(ROOT.'/views/customers/customer-element.php');

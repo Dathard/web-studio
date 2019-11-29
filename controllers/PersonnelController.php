@@ -7,6 +7,8 @@ class PersonnelController
 	{
 		$page = 'personnel';
 
+		$level = "";
+
 		$departmentsList = Department::getDepartmentsList();
 
 		$personnelList = Personnel::getPersonnelList();
@@ -16,13 +18,34 @@ class PersonnelController
 		return true;
 	}
 
+	public function actionDepartment($idDepartment)
+	{
+		$page = 'personnel';
+
+		$level = "../";
+
+		$departmentsList = Department::getDepartmentsList();
+
+		$personnelList = Personnel::getPersonnelListOfDepartment($idDepartment);
+
+		require_once(ROOT.'/views/personnel/department.php');
+
+		return true;
+	}
+
 	public function actionCard($idPersonnel)
 	{
 		$page = 'personnel';
 
+		$level = "";
+
 		$personnelData = Personnel::getPersonnelData($idPersonnel);
 
 		$accounting = Personnel::getAccounting($idPersonnel);
+
+		if ( !count($accounting) ) {
+			return 404;
+		}
 
 		require_once(ROOT.'/views/personnel/card.php');
 
@@ -31,6 +54,8 @@ class PersonnelController
 
 	public function actionNew()
 	{
+		$level = "";
+		
 		$personnelData = Personnel::newEmployee($_POST);
 
 		require_once(ROOT.'/views/personnel/personnel-element.php');

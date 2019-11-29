@@ -8,10 +8,11 @@
             <h2 class="page_header">Персонал</h2>
             <div>
                 <select name="department" id="department">
-                    <option data-url="/personnel/">Усі працівники</option> 
+                    <option data-url="/personnel/">Усі працівники</option>
                     
                     <?php foreach($departmentsList as $department): ?>
-                        <option data-url="/personnel/department/<?php echo $department['id']; ?>">
+                        <option data-url="/personnel/department/<?php echo $department['id']; ?>"
+                            <?php echo ($department['id'] == $idDepartment ? 'selected' : '') ?> >
                             <?php echo $department['address']; ?>
                         </option>
                     <?php endforeach ?>

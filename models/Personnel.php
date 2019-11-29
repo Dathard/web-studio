@@ -24,6 +24,27 @@ class Personnel
 		return $personnelList;
 	}
 
+	public static function getPersonnelListOfDepartment($idDepartment)
+	{
+		$db = Db::getConnection();
+
+		$sql = "SELECT * FROM personnel WHERE id_department = $idDepartment ORDER BY id_personnel DESC";
+		$result = $db->query($sql);
+
+		$personnelList = array();
+
+		while ( $row = $result->fetch_assoc() ) {
+			array_push($personnelList, array(
+				'id'			=>	$row['id_personnel'],
+				'full-name'		=>	$row['last_name'].' '.$row['name'].' '.$row['surname'],
+				'id_department'	=>	$row['id_department'],
+				'position'		=>	$row['position']
+			));
+		}
+
+		return $personnelList;
+	}
+
 	public static function getPersonnelData($idPersonnel)
 	{
 		$db = Db::getConnection();
